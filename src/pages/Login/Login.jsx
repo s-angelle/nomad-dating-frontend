@@ -22,10 +22,13 @@ const Login = ({ setUser }) => {
     try {
       const user = await login(credentials);
       // Once we get our user back, update our App.js user state with the user's firstname
-      console.log(user)
+      console.log(user);
       if (user) {
-         setUser(user);
+        setUser(user);
+        // Redirect to movies page after successful login
         navigate("/movies");
+      } else {
+        throw new Error();
       }
     } catch (e) {
       setMessage("Log in Failed - Try Again");

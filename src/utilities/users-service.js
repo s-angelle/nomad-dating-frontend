@@ -19,6 +19,18 @@ export const login = async (credentials) => {
   }
 };
 
+export const signUp = async (newUser) => {
+  try {
+    // console.log(newUser)
+    // newUser.age = parseInt(newUser.age)
+    const token = await axios.post(BASE_URL, newUser);
+    localStorage.setItem("token", token.data);
+    return token;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 export const getToken = () => {
   // Use property/key/field name to grab our token
   const token = localStorage.getItem("token");
@@ -49,7 +61,7 @@ export const getToken = () => {
 
 export const getUser = () => {
   const token = getToken();
-  return token ? JSON.parse(atob(token.split(".")[1])).user : null;
+  return token ? JSON.parse(Window.atob(token.split(".")[1])).user : null;
 };
 
 export const logOut = () => {

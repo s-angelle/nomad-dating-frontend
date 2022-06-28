@@ -3,11 +3,14 @@ import { Routes, Route } from "react-router-dom";
 // Components
 import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
+import MovieDetails from "../../components/MovieDetails/MovieDetails";
+import UpdateMovieForm from "../../components/UpdateMovieForm/UpdateMovieForm";
 // Pages
 import Home from "../Home/Home";
 import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
 import Movies from "../Movies/Movies";
+import CreateMovie from "../CreateMovie/CreateMovie";
 // Services
 import * as usersService from "../../utilities/users-service";
 // CSS
@@ -20,7 +23,6 @@ const App = () => {
     if (usersService.getToken()) setUser(usersService.getUser());
   }, []);
 
-  console.log("hello", user);
   return (
     <div className="App">
       <Nav user={user} setUser={setUser} logOut={usersService.logOut} />
@@ -29,8 +31,15 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/movies" element={user && <Movies />} />
+        <Route path="/signup" element={<SignUp setUser={setUser} />} />
+        {user && (
+          <>
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/movies/create" element={<CreateMovie />} />
+            <Route path="/movies/:id" element={<MovieDetails />} />
+            <Route path="/movies/:id/edit" element={<UpdateMovieForm />} />
+          </>
+        )}
       </Routes>
 
       <Footer />

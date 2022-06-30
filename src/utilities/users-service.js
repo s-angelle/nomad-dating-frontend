@@ -61,7 +61,7 @@ export const getToken = () => {
 
 export const getUser = () => {
   const token = getToken();
-  return token ? JSON.parse(Window.atob(token.split(".")[1])).user : null;
+  return token ? JSON.parse(atob(token.split(".")[1])).user : null;
 };
 
 export const logOut = () => {

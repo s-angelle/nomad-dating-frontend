@@ -30,7 +30,7 @@ const SignUp = ({ setUser }) => {
       const user = await signUp(newUser);
       // console.log(user)
       setUser(user);
-      if (user) navigate("/movies");
+      if (user) navigate("/profiles");
     } catch (e) {
       console.log(e);
     }

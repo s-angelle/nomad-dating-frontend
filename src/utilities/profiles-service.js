@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getToken } from "./users-service";
 
-const BASE_URL = "http://localhost:8080/api/v1/movies";
+const BASE_URL = "http://localhost:8080/api/v1/profiles";
 
 const setOptions = () => {
   return {
@@ -14,7 +14,7 @@ const setOptions = () => {
   };
 };
 
-export const getMovies = async () => {
+export const getProfiles = async () => {
   try {
     const response = await axios.get(BASE_URL, setOptions());
     // console.log(response)
@@ -24,33 +24,33 @@ export const getMovies = async () => {
   }
 };
 
-export const createMovie = async (movieDetails) => {
+export const createProfile = async (profileDetails) => {
   try {
-    const createdMovie = await axios.post(BASE_URL, movieDetails, setOptions());
-    return createdMovie;
+    const createdProfile= await axios.post(BASE_URL, profileDetails, setOptions());
+    return createdProfile;
   } catch (e) {
     console.log(e);
   }
 };
 
-export const updateMovie = async (newMovieDetails) => {
+export const updateProfile = async (newProfileDetails) => {
   try {
     // console.log(newMovieDetails)
-    const updatedMovie = await axios.put(
-      `${BASE_URL}/${newMovieDetails._id}`,
-      newMovieDetails,
+    const updatedProfile = await axios.put(
+      `${BASE_URL}/${newProfileDetails._id}`,
+      newProfileDetails,
       setOptions()
     );
-    return updatedMovie;
+    return updatedProfile;
   } catch (e) {
     console.log(e);
   }
 };
 
-export const deleteMovie = async (id) => {
+export const deleteProfile = async (id) => {
   try {
-    const deletedMovie = await axios.delete(`${BASE_URL}/${id}`, setOptions());
-    return deletedMovie;
+    const deletedProfile = await axios.delete(`${BASE_URL}/${id}`, setOptions());
+    return deletedProfile;
   } catch (e) {
     console.log(e);
   }

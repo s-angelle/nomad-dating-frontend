@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { getMovies } from "../../utilities/movies-service";
+import { getProfiles } from "../../utilities/profiles-service";
 import { Link, useNavigate } from "react-router-dom";
-import "./Movies.css";
+import "./Profiles.css";
 
-const Movies = () => {
-  const [movies, setMovies] = useState([]);
+const Profiles = () => {
+  const [profiles, setProfiles] = useState([]);
   // const [bool, setBool] = useState(false)
 
   const navigate = useNavigate();
@@ -21,8 +21,8 @@ const Movies = () => {
     // IIFE - Immediately Invoked Function Expression
     // ()(), we can put an anonymous function inside the first set of parenthesis and the second set of parenthesis will immediately invoke that function
     (async () => {
-      const moviesRes = await getMovies();
-      setMovies(moviesRes.data);
+      const profilesRes = await getProfiles();
+      setProfiles(profilesRes.data);
     })();
   }, []);
 
@@ -30,30 +30,30 @@ const Movies = () => {
   // To make HTTP request the moment the component loads
   // Use case: We want to use an empty dependency array to prevent multiple requests to the server
 
-  // console.log('MOVIES', movies)
+  // console.log('profileS', profiles)
   return (
-    <div className="h-100" id="movie-wrapper">
-      <Link className="btn btn-primary" to="/movies/create">
-        Add Movie
+    <div className="h-100" id="profile-wrapper">
+      <Link className="btn btn-primary" to="/profiles/create">
+        Add profile
       </Link>
 
-      <div id="movie-container">
-        {movies.map((movie) => (
+      <div id="profile-container">
+        {profiles.map((profile) => (
           <div
             className="card"
-            id="movie-card"
-            key={movie._id}
-            onClick={() => navigate(`/movies/${movie._id}`, { state: movie })}
+            id="profile-card"
+            key={profile._id}
+            onClick={() => navigate(`/profiles/${profile._id}`, { state: profile })}
           >
             <img
-              src={movie.image}
+              src={profile.image}
               className="card-img-top"
-              alt={`Movie poster: ${movie.title}`}
-              id="movie-poster"
+              alt={`profile poster: ${profile.name}`}
+              id="profile-poster"
             />
             <div className="card-body">
-              <h5 className="card-title">{movie.title}</h5>
-              <p className="card-text">{movie.plot}</p>
+              <h5 className="card-title">{profile.age}</h5>
+              <p className="card-text">{profile.about}</p>
             </div>
           </div>
         ))}
@@ -68,4 +68,4 @@ const Movies = () => {
 {
   /* <button onClick={logOut}>LOGOUT</button> */
 }
-export default Movies;
+export default Profiles;

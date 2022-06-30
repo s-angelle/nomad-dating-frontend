@@ -3,14 +3,14 @@ import { Routes, Route } from "react-router-dom";
 // Components
 import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
-import MovieDetails from "../../components/MovieDetails/MovieDetails";
-import UpdateMovieForm from "../../components/UpdateMovieForm/UpdateMovieForm";
+import ProfileDetails from "../../components/ProfileDetails/ProfileDetails";
+import UpdateProfileForm from "../../components/UpdateProfileForm/UpdateProfileForm";
 // Pages
 import Home from "../Home/Home";
 import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
-import Movies from "../Movies/Movies";
-import CreateMovie from "../CreateMovie/CreateMovie";
+import Profiles from "../Profiles/Profiles";
+import CreateProfile from "../CreateProfile/CreateProfile";
 // Services
 import * as usersService from "../../utilities/users-service";
 // CSS
@@ -34,10 +34,10 @@ const App = () => {
         <Route path="/signup" element={<SignUp setUser={setUser} />} />
         {user && (
           <>
-            <Route path="/movies" element={<Movies />} />
-            <Route path="/movies/create" element={<CreateMovie />} />
-            <Route path="/movies/:id" element={<MovieDetails />} />
-            <Route path="/movies/:id/edit" element={<UpdateMovieForm />} />
+            <Route path="/profiles" element={<Profiles />} />
+            <Route path="/profiles/create" element={<CreateProfile />} />
+            <Route path="/profiles/:id" element={<ProfileDetails />} />
+            <Route path="/profiles/:id/edit" element={<UpdateProfileForm />} />
           </>
         )}
       </Routes>

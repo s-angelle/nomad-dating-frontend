@@ -1,10 +1,10 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { deleteMovie } from "../../utilities/movies-service";
+import { deleteProfile } from "../../utilities/profiles-service";
 
-const MovieDetails = () => {
+const ProfileDetails = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const movieDetails = location.state;
+  const profileDetails = location.state;
 
   // console.log(location.state)
 
@@ -12,8 +12,8 @@ const MovieDetails = () => {
 
   const handleDelete = async () => {
     try {
-      const res = await deleteMovie(movieDetails._id);
-      if (res.status === 200) navigate("/movies");
+      const res = await deleteProfile(profileDetails._id);
+      if (res.status === 200) navigate("/profiles");
     } catch (e) {
       console.log(e);
     }
@@ -21,13 +21,13 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <img src={movieDetails.image} alt="" />
-      <p>Title: {movieDetails.title}</p>
-      <p>Content Rating: {movieDetails.contentRating}</p>
+      <img src={profileDetails.image} alt="" />
+      <p>Title: {profileDetails.title}</p>
+      <p>Content Rating: {profileDetails.contentRating}</p>
       <button
         className="btn btn-primary"
         onClick={() =>
-          navigate(`/movies/${movieDetails._id}/edit`, { state: movieDetails })
+          navigate(`/profiles/${profileDetails._id}/edit`, { state: profileDetails })
         }
       >
         Edit
@@ -39,4 +39,4 @@ const MovieDetails = () => {
   );
 };
 
-export default MovieDetails;
+export default ProfileDetails;

@@ -25,8 +25,8 @@ const Login = ({ setUser }) => {
       console.log(user);
       if (user) {
         setUser(user);
-        // Redirect to movies page after successful login
-        navigate("/movies");
+        // Redirect to profiles page after successful login
+        navigate("/profiles");
       } else {
         throw new Error();
       }

@@ -1,20 +1,20 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import * as moviesService from "../../utilities/movies-service";
+import * as profilesService from "../../utilities/profiles-service";
 
-const UpdateMovieForm = () => {
+const UpdateProfileForm = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const movie = location.state;
+  const profile = location.state;
 
-  const [movieDetails, setMovieDetails] = useState(movie);
+  const [profileDetails, setProfileDetails] = useState(profile);
 
   // console.log(location.state)
 
   const handleChange = (e) => {
-    setMovieDetails({
-      ...movieDetails,
+    setProfileDetails({
+      ...profileDetails,
       [e.target.name]: e.target.value,
     });
   };
@@ -22,10 +22,10 @@ const UpdateMovieForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await moviesService.updateMovie(movieDetails);
+      const res = await profilesService.updateProfile(profileDetails);
       // console.log(res)
       if (res.status === 200)
-        navigate(`/movies/${movieDetails.id}`, { state: movieDetails });
+        navigate(`/profiles/${profileDetails.id}`, { state: profileDetails });
     } catch (e) {
       console.log(e);
     }
@@ -44,8 +44,7 @@ const UpdateMovieForm = () => {
           id="inputTitle4"
           name="title"
           onChange={handleChange}
-          value={movieDetails.title}
-          placeholder={movie.title}
+          value={profileDetails.title}
         />
       </div>
       <div className="col-md-3">
@@ -58,7 +57,7 @@ const UpdateMovieForm = () => {
           id="inputGenre4"
           name="genre"
           onChange={handleChange}
-          value={movieDetails.genre}
+          value={profileDetails.genre}
         />
       </div>
       <div className="col-md-3">
@@ -71,7 +70,7 @@ const UpdateMovieForm = () => {
           id="inputGenre4"
           name="year"
           onChange={handleChange}
-          value={movieDetails.year}
+          value={profileDetails.year}
         />
       </div>
       <div className="col-12">
@@ -82,10 +81,10 @@ const UpdateMovieForm = () => {
           type="text"
           className="form-control"
           id="inputPlot"
-          placeholder="Movie description..."
+          placeholder="Profile description..."
           name="plot"
           onChange={handleChange}
-          value={movieDetails.plot}
+          value={profileDetails.plot}
         />
       </div>
 
@@ -99,7 +98,7 @@ const UpdateMovieForm = () => {
           id="inputImage"
           name="image"
           onChange={handleChange}
-          value={movieDetails.image}
+          value={profileDetails.image}
         />
       </div>
 
@@ -113,7 +112,7 @@ const UpdateMovieForm = () => {
           id="inputContentRating"
           name="contentRating"
           onChange={handleChange}
-          value={movieDetails.contentRating}
+          value={profileDetails.contentRating}
         />
       </div>
 
@@ -127,7 +126,7 @@ const UpdateMovieForm = () => {
           id="inputIMDBrating"
           name="imDbRating"
           onChange={handleChange}
-          value={movieDetails.imDbRating}
+          value={profileDetails.imDbRating}
         />
       </div>
 
@@ -141,17 +140,18 @@ const UpdateMovieForm = () => {
           id="inputRuntimeMins"
           name="runtimeMins"
           onChange={handleChange}
-          value={movieDetails.runtimeMins}
+          value={profileDetails.runtimeMins}
         />
       </div>
 
       <div className="col-12">
-        <button type="submit" className="btn btn-primary">
-          Update Movie
+        <button type="submit" className="btn btn-primary" >
+          Update Profile
         </button>
       </div>
     </form>
   );
 };
 
-export default UpdateMovieForm;
+
+export default UpdateProfileForm;

@@ -42,8 +42,8 @@ const Nav = ({ user, setUser, logOut }) => {
                 </form>
                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li className="nav-item">
-                    <Link className="nav-link" to="/movies">
-                      Movies
+                    <Link className="nav-link" to="/products">
+                     Products
                     </Link>
                   </li>
                   <li className="nav-item">

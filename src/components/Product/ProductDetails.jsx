@@ -1,10 +1,10 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { deleteProfile } from "../../utilities/profiles-service";
+import { deleteProduct } from "../../utilities/products-service";
 
-const ProfileDetails = () => {
+const ProductDetails = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const profileDetails = location.state;
+  const productDetails = location.state;
 
   // console.log(location.state)
 
@@ -12,8 +12,8 @@ const ProfileDetails = () => {
 
   const handleDelete = async () => {
     try {
-      const res = await deleteProfile(profileDetails._id);
-      if (res.status === 200) navigate("/profiles");
+      const res = await deleteProduct(productDetails._id);
+      if (res.status === 200) navigate("/products");
     } catch (e) {
       console.log(e);
     }
@@ -21,13 +21,13 @@ const ProfileDetails = () => {
 
   return (
     <div>
-      <img src={profileDetails.image} alt="" />
-      <p>Title: {profileDetails.title}</p>
-      <p>Content Rating: {profileDetails.contentRating}</p>
+      <img src={productDetails.image} alt="" />
+      <p>Title: {productDetails.title}</p>
+      <p>Price: {productDetails.price}</p>
       <button
         className="btn btn-primary"
         onClick={() =>
-          navigate(`/profiles/${profileDetails._id}/edit`, { state: profileDetails })
+          navigate(`/products/${productDetails._id}/edit`, { state: productDetails })
         }
       >
         Edit
@@ -39,4 +39,4 @@ const ProfileDetails = () => {
   );
 };
 
-export default ProfileDetails;
+export default ProductDetails;

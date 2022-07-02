@@ -6,12 +6,13 @@ const SignUp = ({ setUser }) => {
   const [newUser, setNewUser] = useState({
     firstName: "",
     lastName: "",
-    picture: "",
+    image: "",
     phone: "",
     age: 0,
     email: "",
     password: "",
     repassword: "",
+    about:"",
     active: true,
   });
 
@@ -30,7 +31,7 @@ const SignUp = ({ setUser }) => {
       const user = await signUp(newUser);
       // console.log(user)
       setUser(user);
-      if (user) navigate("/profiles");
+      if (user) navigate("/products");
     } catch (e) {
       console.log(e);
     }
@@ -81,7 +82,7 @@ const SignUp = ({ setUser }) => {
                             id="form3Example1n"
                             className="form-control form-control-lg"
                             name="lastName"
-                            value={newUser.lastname}
+                            value={newUser.lastName}
                             onChange={handleChange}
                             required
                           />
@@ -141,7 +142,7 @@ const SignUp = ({ setUser }) => {
                             id="form3Example1n1"
                             className="form-control form-control-lg"
                             name="picture"
-                            value={newUser.picture}
+                            value={newUser.image}
                             onChange={handleChange}
                           />
                           <label
@@ -192,6 +193,19 @@ const SignUp = ({ setUser }) => {
                       />
                       <label className="form-label" htmlFor="form3Example10">
                         Re-type Password
+                      </label>
+
+                      <input
+                        type="about"
+                        id="form3Example10"
+                        className="form-control form-control-lg"
+                        name="about"
+                        value={newUser.about}
+                        onChange={handleChange}
+                        required
+                      />
+                      <label className="form-label" htmlFor="form3Example10">
+                        About You
                       </label>
                     </div>
                   </div>

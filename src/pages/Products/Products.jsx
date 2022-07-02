@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { getProfiles } from "../../utilities/profiles-service";
+import { getProducts } from "../../utilities/products-service";
 import { Link, useNavigate } from "react-router-dom";
-import "./Profiles.css";
+import "./Products.css";
 
-const Profiles = () => {
-  const [profiles, setProfiles] = useState([]);
+const Products = () => {
+  const [products, setProducts] = useState([]);
   // const [bool, setBool] = useState(false)
 
   const navigate = useNavigate();
@@ -21,8 +21,8 @@ const Profiles = () => {
     // IIFE - Immediately Invoked Function Expression
     // ()(), we can put an anonymous function inside the first set of parenthesis and the second set of parenthesis will immediately invoke that function
     (async () => {
-      const profilesRes = await getProfiles();
-      setProfiles(profilesRes.data);
+      const productsRes = await getProducts();
+      setProducts(productsRes.data);
     })();
   }, []);
 
@@ -32,28 +32,28 @@ const Profiles = () => {
 
   // console.log('profileS', profiles)
   return (
-    <div className="h-100" id="profile-wrapper">
-      <Link className="btn btn-primary" to="/profiles/create">
-        Add profile
+    <div className="h-100" id="product-wrapper">
+      <Link className="btn btn-primary" to="/products/create">
+        Add product
       </Link>
 
-      <div id="profile-container">
-        {profiles.map((profile) => (
+      <div id="product-container">
+        {products.map((product) => (
           <div
             className="card"
-            id="profile-card"
-            key={profile._id}
-            onClick={() => navigate(`/profiles/${profile._id}`, { state: profile })}
+            id="product-card"
+            key={product._id}
+            onClick={() => navigate(`/products/${product._id}`, { state: product })}
           >
             <img
-              src={profile.image}
+              src={product.image}
               className="card-img-top"
-              alt={`profile poster: ${profile.name}`}
-              id="profile-poster"
+              alt={`product poster: ${product.title}`}
+              id="product-poster"
             />
             <div className="card-body">
-              <h5 className="card-title">{profile.age}</h5>
-              <p className="card-text">{profile.about}</p>
+              <h5 className="card-title">{product.price}</h5>
+              <p className="card-text">{product.description}</p>
             </div>
           </div>
         ))}
@@ -68,4 +68,4 @@ const Profiles = () => {
 {
   /* <button onClick={logOut}>LOGOUT</button> */
 }
-export default Profiles;
+export default Products;

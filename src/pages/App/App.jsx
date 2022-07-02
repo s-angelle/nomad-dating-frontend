@@ -3,14 +3,14 @@ import { Routes, Route } from "react-router-dom";
 // Components
 import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
-import ProfileDetails from "../../components/ProfileDetails/ProfileDetails";
-import UpdateProfileForm from "../../components/UpdateProfileForm/UpdateProfileForm";
+import ProductDetails from "../../components/Product/ProductDetails";
+import UpdateProductForm from "../../components/UpdateProductForm/UpdateProductForm";
 // Pages
 import Home from "../Home/Home";
 import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
-import Profiles from "../Profiles/Profiles";
-import CreateProfile from "../CreateProfile/CreateProfile";
+import Products from "../Products/Products";
+import CreateProduct from "../CreateProduct/CreateProduct";
 // Services
 import * as usersService from "../../utilities/users-service";
 // CSS
@@ -34,10 +34,10 @@ const App = () => {
         <Route path="/signup" element={<SignUp setUser={setUser} />} />
         {user && (
           <>
-            <Route path="/profiles" element={<Profiles />} />
-            <Route path="/profiles/create" element={<CreateProfile />} />
-            <Route path="/profiles/:id" element={<ProfileDetails />} />
-            <Route path="/profiles/:id/edit" element={<UpdateProfileForm />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/products/create" element={<CreateProduct />} />
+            <Route path="/products/:id" element={<ProductDetails />} />
+            <Route path="/products/:id/edit" element={<UpdateProductForm />} />
           </>
         )}
       </Routes>

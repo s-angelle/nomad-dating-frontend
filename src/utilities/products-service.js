@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getToken } from "./users-service";
 
-const BASE_URL = "http://localhost:8080/api/v1/profiles";
+const BASE_URL = "http://localhost:8080/api/v1/products";
 
 const setOptions = () => {
   return {
@@ -14,7 +14,7 @@ const setOptions = () => {
   };
 };
 
-export const getProfiles = async () => {
+export const getProducts = async () => {
   try {
     const response = await axios.get(BASE_URL, setOptions());
     // console.log(response)
@@ -24,33 +24,32 @@ export const getProfiles = async () => {
   }
 };
 
-export const createProfile = async (profileDetails) => {
+export const createProduct = async (productDetails) => {
   try {
-    const createdProfile= await axios.post(BASE_URL, profileDetails, setOptions());
-    return createdProfile;
+    const createdProduct= await axios.post(BASE_URL, productDetails, setOptions());
+    return createdProduct;
   } catch (e) {
     console.log(e);
   }
 };
 
-export const updateProfile = async (newProfileDetails) => {
+export const updateProduct= async (newProductDetails) => {
   try {
-    // console.log(newMovieDetails)
-    const updatedProfile = await axios.put(
-      `${BASE_URL}/${newProfileDetails._id}`,
-      newProfileDetails,
+    const updatedProduct= await axios.put(
+      `${BASE_URL}/${newProductDetails._id}`,
+      newProductDetails,
       setOptions()
     );
-    return updatedProfile;
+    return updatedProduct;
   } catch (e) {
     console.log(e);
   }
 };
 
-export const deleteProfile = async (id) => {
+export const deleteProduct = async (id) => {
   try {
-    const deletedProfile = await axios.delete(`${BASE_URL}/${id}`, setOptions());
-    return deletedProfile;
+    const deletedProduct = await axios.delete(`${BASE_URL}/${id}`, setOptions());
+    return deletedProduct;
   } catch (e) {
     console.log(e);
   }

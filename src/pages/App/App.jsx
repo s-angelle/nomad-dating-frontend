@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 // Components
 import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
-import ProductDetails from "../../components/Product/ProductDetails";
+import ProductDetails from "../../components/ProductDetails/ProductDetails";
 import UpdateProductForm from "../../components/UpdateProductForm/UpdateProductForm";
 // Pages
 import Home from "../Home/Home";
@@ -11,6 +11,10 @@ import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
 import Products from "../Products/Products";
 import CreateProduct from "../CreateProduct/CreateProduct";
+import Cart from "../Cart/Cart";
+import Pay from "../Pay/Pay";
+import Success from "../Success/Success";
+import StripeCheckout from 'react-stripe-checkout';
 // Services
 import * as usersService from "../../utilities/users-service";
 // CSS
@@ -38,6 +42,9 @@ const App = () => {
             <Route path="/products/create" element={<CreateProduct />} />
             <Route path="/products/:id" element={<ProductDetails />} />
             <Route path="/products/:id/edit" element={<UpdateProductForm />} />
+            <Route path="/cart/:id" element={<Cart />} />
+            <Route path="/pay" element={<Pay />}/>
+            <Route path="/success" element={<Success />} />
           </>
         )}
       </Routes>

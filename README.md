@@ -25,3 +25,4 @@ https://github.com/s-angelle/the-wander-shop-app.git
 - Create Admin Page / Dashboard
 - Enable user to update cart from cart page.
 - Add functionality to search bar on nav bar component
+- Add user profile page

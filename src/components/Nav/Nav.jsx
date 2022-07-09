@@ -2,10 +2,20 @@ import { Link } from "react-router-dom";
 import { Badge } from "@material-ui/core";
 import { ShoppingCartOutlined } from "@material-ui/icons";
 import { useSelector } from "react-redux";
+import Products from "../../pages/Products/Products";
+
 
 
 const Nav = ({ user, setUser, logOut }) => {
-  // console.log('user', user)
+  // [filteredItems, setFilteredItems] = useState()
+  // // console.log('user', user)
+
+  // useEffect(() => {
+  //   effect
+  //   return () => {
+  //     cleanup
+  //   };
+  // }, [products]);
 
   const handleLogOut = () => {
     setUser(null);

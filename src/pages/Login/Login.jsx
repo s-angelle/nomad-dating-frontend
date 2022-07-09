@@ -26,7 +26,7 @@ const Login = ({ setUser }) => {
       if (user) {
         setUser(user);
         // Redirect to profiles page after successful login
-        navigate("/profiles");
+        navigate('/products');
       } else {
         throw new Error();
       }

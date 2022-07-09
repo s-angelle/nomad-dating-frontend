@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import { Badge } from "@material-ui/core";
+import { ShoppingCartOutlined } from "@material-ui/icons";
+import { useSelector } from "react-redux";
+
 
 const Nav = ({ user, setUser, logOut }) => {
   // console.log('user', user)
@@ -7,6 +11,9 @@ const Nav = ({ user, setUser, logOut }) => {
     setUser(null);
     logOut();
   };
+
+  const quantity = useSelector(state => state.cart.quantity)
+
 
   return (
     <div>
@@ -41,6 +48,13 @@ const Nav = ({ user, setUser, logOut }) => {
                   </button>
                 </form>
                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li className="nav-item">
+                    <Link to='/cart/:id'>
+                  <Badge badgeContent={quantity} color="primary">
+                    <ShoppingCartOutlined />
+                  </Badge>
+                  </Link>
+                  </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="/products">
                      Products

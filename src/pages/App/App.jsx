@@ -14,7 +14,6 @@ import CreateProduct from "../CreateProduct/CreateProduct";
 import Cart from "../Cart/Cart";
 import Pay from "../Pay/Pay";
 import Success from "../Success/Success";
-import StripeCheckout from 'react-stripe-checkout';
 // Services
 import * as usersService from "../../utilities/users-service";
 // CSS

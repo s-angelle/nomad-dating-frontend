@@ -30,3 +30,4 @@ https://github.com/s-angelle/the-wander-shop-app.git
 - Create Admin Page / Dashboard
 - Add user profile page
 - Add order history page
+- Implement about / contact page

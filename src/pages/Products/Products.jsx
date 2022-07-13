@@ -19,7 +19,7 @@ const Products = () => {
     <div className="h-100" id="product-wrapper">
       <h2>Check Out Our Adventures</h2>
       <Link className="btn btn-light" id='add-product-btn'to="/products/create">
-        Add product
+        Add an Adventure
       </Link>
       <div id="product-container">
         {products.sort((a, b) => a.title.localeCompare(b.title)).map((product) => (

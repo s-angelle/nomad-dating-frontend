@@ -16,7 +16,7 @@ https://github.com/s-angelle/the-wander-shop-app.git
 | 07/09/2022 | updated src folder and implemented redux library        | None     | enhance CSS              |
 | 07/10/2022 | updated components / pages / redux / and stripe library | None     | enhance CSS              |
 | 07/11/2022 | added components and pages                              | None     | enhance CSS              |
-| 07/13/2022 | updated css for components / pages                      | None     | stretch goals            |
+| 07/13/2022 | updated css for components / pages                      | None     | organize / format code   |
 
 ## Stretch Goals / Areas of Improvement
 

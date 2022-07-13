@@ -1,0 +1,8 @@
+#login-form {
+    height: 78vh;
+    margin-top: 25%;
+}
+
+#login-form input {
+    background-color: rgb(223, 214, 195);
+}

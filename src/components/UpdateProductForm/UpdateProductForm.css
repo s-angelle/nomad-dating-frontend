@@ -1,4 +1,4 @@
-#create-product-form {
+#update-product-form {
     margin-top:3em;
     margin-left: 10%;
     margin-right: 10%;
@@ -6,7 +6,7 @@
     padding:1rem;
 }
 
-#create-product-form input,
+#update-product-form input,
 #description-div textarea {
     background-color: rgb(223, 214, 195); 
 } 

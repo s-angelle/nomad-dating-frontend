@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import * as productsService from "../../utilities/products-service";
+import './UpdateProductForm.css';
 
 const UpdateProductForm = () => {
   const location = useLocation();
@@ -33,7 +34,7 @@ const UpdateProductForm = () => {
 
   // console.log(movieDetails)
   return (
-    <form className="row g-3" id="create-movie-form" onSubmit={handleSubmit}>
+    <form className="row g-3" id="update-product-form" onSubmit={handleSubmit}>
       <div className="col-md-6">
         <label htmlFor="inputTitle4" className="form-label">
           Title
@@ -46,10 +47,9 @@ const UpdateProductForm = () => {
           onChange={handleChange}
           value={productDetails.title}
         />
-      </div>
-      <div className="col-md-3">
+      <div id='price-div'className="col-md-3">
         <label htmlFor="inputGenre4" className="form-label">
-          Year
+          Price:
         </label>
         <input
           type="number"
@@ -60,24 +60,24 @@ const UpdateProductForm = () => {
           value={productDetails.price}
         />
       </div>
-      <div className="col-12">
+      </div>
+      <div id ='description-div'className="col-12">
         <label htmlFor="inputPlot" className="form-label">
-          Plot
+         Description:
         </label>
-        <input
+        <textarea rows='5' cols='60' id='description' name='description'
           type="text"
           className="form-control"
-          id="inputPlot"
           placeholder="Product description..."
-          name="plot"
           onChange={handleChange}
           value={productDetails.description}
-        />
+        >
+        </textarea>
       </div>
 
       <div className="col-md-6">
         <label htmlFor="inputImage" className="form-label">
-          Image
+          Image:
         </label>
         <input
           type="text"
@@ -90,7 +90,7 @@ const UpdateProductForm = () => {
       </div>
 
       <div className="col-12">
-        <button type="submit" className="btn btn-primary" >
+        <button id='update-product-btn'type="submit" className="btn btn-primary" >
           Update Product
         </button>
       </div>

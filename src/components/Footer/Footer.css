@@ -1,0 +1,15 @@
+#footer {
+    background-color:#012D80!important;
+    color:antiquewhite;
+    list-style: none;
+    text-decoration: none;
+    position: static;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#footer a {
+    text-decoration: none;
+    color:antiquewhite;
+}

@@ -21,8 +21,9 @@ https://github.com/s-angelle/the-wander-shop-app.git
 ---
 
 - Enhance CSS
+- Remove items from cart after user "buys" product
 - Successfully connect to backend's third-party API
-- Create Admin Page / Dashboard
-- Enable user to update cart from cart page.
+- Enable user to update cart from cart page
 - Add functionality to search bar on nav bar component
+- Create Admin Page / Dashboard
 - Add user profile page

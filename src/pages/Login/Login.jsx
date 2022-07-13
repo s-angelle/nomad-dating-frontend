@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../utilities/users-service";
+import './Login.css';
 
 const Login = ({ setUser }) => {
   const [message, setMessage] = useState(
@@ -36,10 +37,11 @@ const Login = ({ setUser }) => {
   };
 
   return (
-    <form className="mx-auto w-50 border p-3" onSubmit={handleSubmit}>
+    <form className="mx-auto w-50 border p-5 mt-5" id='login-form'onSubmit={handleSubmit}>
+      <h2> Are You Ready ?</h2>
       <div className="mb-3">
         <label htmlFor="exampleInputEmail1" className="form-label">
-          Email address
+          Email address:
         </label>
         <input
           type="email"
@@ -56,7 +58,7 @@ const Login = ({ setUser }) => {
       </div>
       <div className="mb-3">
         <label htmlFor="exampleInputPassword1" className="form-label">
-          Password
+          Password:
         </label>
         <input
           type="password"

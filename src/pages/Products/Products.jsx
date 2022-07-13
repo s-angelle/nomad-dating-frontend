@@ -17,13 +17,14 @@ const Products = () => {
 
   return (
     <div className="h-100" id="product-wrapper">
-      <Link className="btn btn-primary" to="/products/create">
+      <h2>Check Out Our Adventures</h2>
+      <Link className="btn btn-light" id='add-product-btn'to="/products/create">
         Add product
       </Link>
       <div id="product-container">
         {products.sort((a, b) => a.title.localeCompare(b.title)).map((product) => (
           <div
-            className="card"
+            className="card zoom-box"
             id="product-card"
             key={product._id}
             onClick={() => navigate(`/products/${product._id}`, { state: product })}
@@ -36,7 +37,7 @@ const Products = () => {
             />
             <div className="card-body">
               <h5 className="card-title">{product.title}</h5>
-              <p className="card-text"> ${product.price}</p>
+              <h6 className="card-text"> ${product.price}</h6>
             </div>
           </div>
         ))}

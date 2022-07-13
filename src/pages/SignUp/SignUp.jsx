@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { signUp } from "../../utilities/users-service";
 import { useNavigate } from "react-router-dom";
+import SignUpPhoto from "../../images/Who-We-Are.png";
+import "./SignUp.css";
 
 const SignUp = ({ setUser }) => {
   const [newUser, setNewUser] = useState({
@@ -12,7 +14,7 @@ const SignUp = ({ setUser }) => {
     email: "",
     password: "",
     repassword: "",
-    about:"",
+    about: "",
     active: true,
   });
 
@@ -38,22 +40,23 @@ const SignUp = ({ setUser }) => {
   };
 
   return (
-    <section className="h-100 bg-dark">
-      <div className="container py-5 h-100">
-        <div className="row d-flex justify-content-center align-items-center h-100">
-          <div className="col">
-            <div className="card card-registration my-4">
+    <section id='sign-up' className="h-90">
+      <div className="container py-4 h-50">
+        <div className="row d-flex justify-content-center align-items-center h-50">
+          <div className="col h-40">
+            <div className="card card-registration">
               <div className="row g-0">
                 <div className="col-xl-6 d-none d-xl-block">
                   <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                    id="sign-up-photo"
+                    src={SignUpPhoto}
                     alt="Sample photo"
                     className="img-fluid"
                   />
                 </div>
                 <form className="col-xl-6" onSubmit={handleSubmit}>
-                  <div className="card-body p-md-5 text-black">
-                    <h3 className="mb-5 text-uppercase">Sign Up</h3>
+                  <div  id='signup-card'className="card-body p-md-3 text-black">
+                    <h3 className="mb-5 mt-2 text-uppercase text-center">Join Us</h3>
 
                     <div className="row">
                       <div className="col-md-6 mb-4">
@@ -71,7 +74,7 @@ const SignUp = ({ setUser }) => {
                             className="form-label"
                             htmlFor="form3Example1m"
                           >
-                            First name
+                            First name:
                           </label>
                         </div>
                       </div>
@@ -90,7 +93,7 @@ const SignUp = ({ setUser }) => {
                             className="form-label"
                             htmlFor="form3Example1n"
                           >
-                            Last name
+                            Last name:
                           </label>
                         </div>
                       </div>
@@ -112,7 +115,7 @@ const SignUp = ({ setUser }) => {
                             className="form-label"
                             htmlFor="form3Example1m1"
                           >
-                            Age
+                            Age:
                           </label>
                         </div>
                       </div>
@@ -120,7 +123,6 @@ const SignUp = ({ setUser }) => {
                         <div className="form-outline">
                           <input
                             type="text"
-                            id="form3Example1n1"
                             className="form-control form-control-lg"
                             name="phone"
                             value={newUser.phone}
@@ -130,7 +132,7 @@ const SignUp = ({ setUser }) => {
                             className="form-label"
                             htmlFor="form3Example1n1"
                           >
-                            Phone Number
+                            Phone Number:
                           </label>
                         </div>
                       </div>
@@ -139,7 +141,6 @@ const SignUp = ({ setUser }) => {
                         <div className="form-outline">
                           <input
                             type="text"
-                            id="form3Example1n1"
                             className="form-control form-control-lg"
                             name="picture"
                             value={newUser.image}
@@ -149,7 +150,7 @@ const SignUp = ({ setUser }) => {
                             className="form-label"
                             htmlFor="form3Example1n1"
                           >
-                            Picture
+                           Profile Photo:
                           </label>
                         </div>
                       </div>
@@ -158,7 +159,6 @@ const SignUp = ({ setUser }) => {
                     <div className="form-outline mb-4">
                       <input
                         type="email"
-                        id="form3Example8"
                         className="form-control form-control-lg"
                         name="email"
                         value={newUser.email}
@@ -166,12 +166,11 @@ const SignUp = ({ setUser }) => {
                         required
                       />
                       <label className="form-label" htmlFor="form3Example8">
-                        Email
+                        Email:
                       </label>
 
                       <input
                         type="password"
-                        id="form3Example9"
                         className="form-control form-control-lg"
                         name="password"
                         value={newUser.password}
@@ -179,40 +178,43 @@ const SignUp = ({ setUser }) => {
                         required
                       />
                       <label className="form-label" htmlFor="form3Example9">
-                        Password
+                        Password:
                       </label>
 
                       <input
                         type="password"
-                        id="form3Example10"
                         className="form-control form-control-lg"
                         name="repassword"
                         value={newUser.repassword}
                         onChange={handleChange}
                         required
                       />
-                      <label className="form-label" htmlFor="form3Example10">
-                        Re-type Password
+                      <label className="form-label" htmlFor="form3Example9">
+                        Re-type Password:
                       </label>
 
                       <input
-                        type="about"
-                        id="form3Example10"
+                        type="text"
                         className="form-control form-control-lg"
                         name="about"
                         value={newUser.about}
                         onChange={handleChange}
                         required
                       />
-                      <label className="form-label" htmlFor="form3Example10">
-                        About You
+                      <label className="form-label" htmlFor="form3Example9">
+                        A few of your interests:
+                        <input
+                          type="about"
+                          className="form-control form-control-lg"
+                          required
+                        />
                       </label>
                     </div>
-                  </div>
-
-                  <button className="btn btn-primary" type="submit">
+                  <button className="btn btn-primary mb-4" type="submit">
                     Submit
                   </button>
+                  </div>
+
                 </form>
               </div>
             </div>

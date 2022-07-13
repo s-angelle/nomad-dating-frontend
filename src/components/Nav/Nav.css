@@ -1,0 +1,39 @@
+
+#shopping-cart {
+  margin-right: 0.5rem;
+  color: antiquewhite;
+}
+
+#navbar-toggler:active {
+  color: white;
+}
+
+#company-logo {
+  position: fixed;
+  margin-top: 0;
+  border-radius: 50%;
+  top: 0;
+  left: 1%;
+  height: 6.5rem;
+  width: 6.5rem;
+  border: solid #142f5c;
+  z-index:2;
+}
+
+.navbar-toggler {
+  background-color: antiquewhite;
+}
+
+#navbar {
+  /* background-color: #142f5c!important; */
+  background-color:#012D80!important;
+  /* background-color:#0c4381!important; */
+  /* background-color:#0c4281!important; */
+  /* background-color: linear-gradient(left, #012D80, #0c4381)!important; */
+  /* background: url('https://mythsandmountains.com/wp-content/uploads/2018/09/myths-and-mountains-intro-slide3-1.jpg') 82% -106%!important; */
+  /* object-fit: fill; */
+}
+
+.text-white {
+  color: antiquewhite!important;
+}

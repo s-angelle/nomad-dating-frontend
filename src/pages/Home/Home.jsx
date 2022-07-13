@@ -1,8 +1,10 @@
-
+import './Home.css'
+// import HomePagePhoto from '../../images/backpacking-pic.jpeg';
 const Home = () => {
     return (
-        <div>
-            <p>This is our Home Page</p>
+        <div id="home-div">
+            <h1>Welcome</h1>
+            <img id='homepage-photo' src='https://mythsandmountains.com/wp-content/uploads/2018/09/myths-and-mountains-intro-slide3-1.jpg'/>
         </div>
     );
 }

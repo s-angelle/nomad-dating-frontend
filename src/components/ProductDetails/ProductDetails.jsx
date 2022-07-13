@@ -6,9 +6,10 @@ import { deleteProduct } from "../../utilities/products-service";
 import { useDispatch } from "react-redux";
 import { useState } from 'react';
 import { Button } from '@material-ui/core';
-import { AddCircleOutline } from '@material-ui/icons';
+import { AddCircleOutline, Edit } from '@material-ui/icons';
 import { RemoveCircleOutline } from '@material-ui/icons';
-import { Add } from "@material-ui/icons";
+import './ProductDetails.css';
+
 
 const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1);
@@ -60,24 +61,24 @@ const ProductDetails = () => {
   }
 
   return (
-    <div>
-      <img src={productDetails.image} alt="" />
-      <h5>{productDetails.title}</h5>
-      <p>{productDetails.description}</p>
-      <p> ${productDetails.price}</p>
-      <button
-        className="btn btn-primary"
+    <div id='details-div'>
+      <img id='product-details-img' src={productDetails.image} alt=""/>
+      <h4 id='product-title'>{productDetails.title}</h4>
+      <h6 id='price'> ${productDetails.price}</h6>
+      <h6 id='product-description'>{productDetails.description}</h6>
+      <Button>
+        <Edit
         onClick={() =>
           navigate(`/products/${productDetails._id}/edit`, { state: productDetails })
         }
-      >
+        />
+      </Button>
         Edit
-      </button>
-      <button className="btn btn-danger" onClick={handleDelete}>
+      {/* <button className="btn btn-danger" onClick={handleDelete}>
         Delete
-      </button>
-       <Button><AddCircleOutline onClick={handleAddClick}/></Button> Add to Cart
-       <Button><RemoveCircleOutline onClick={handleRemoveClick}/></Button> Remove from Cart
+      </button> */}
+       <Button id='button'><AddCircleOutline onClick={handleAddClick}/></Button> Add to Cart
+       <Button id='button'><RemoveCircleOutline onClick={handleRemoveClick}/></Button> Remove from Cart
     </div>
   );
 };

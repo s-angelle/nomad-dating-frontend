@@ -1,9 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import StripeCheckout from 'react-stripe-checkout';
 import { userRequest } from '../../utilities/stripe-service';
+import CompanyLogo from '../../images/Wander-Shop-Co.png';
+import './Cart.css';
 
 
 
@@ -37,33 +39,50 @@ const Cart = () => {
     },[stripeToken, cart.total, navigate])
 
     return (
-        <div>
-            <button>Your Cart ({quantity})</button>
-            <button>Continue Shopping</button>
-            <StripeCheckout
+        <div id="cart-item-wrapper">
+            <div id="cart-container"> 
+              <h3 id='cart-title'>Your Cart ({quantity})</h3> 
+            {/* <button>Continue Shopping</button> */}
+            
+            {/* <StripeCheckout id='checkout'
        name="The Wander Shop"
-       image="LOGO"
+       image={CompanyLogo}
        billingAddress
        shippingAddress
-       description={`Your total is ${cart.total}`}
+       description={`Your total is $ ${cart.total}`}
        amount={cart.total*100}
        token={onToken}
        stripeKey={KEY}>
         <button>Pay Now</button>
-      </StripeCheckout>
-            <h4>Info</h4>
+      </StripeCheckout> */}
+      
             {cart.products.map(product => (
-                <div> 
-               <img src={product.image}/>
-                <h5>{product.title}</h5>
+                <div
+                className="card" id='cart-item-div'
+                onClick={() => navigate(`/products/${product._id}`, { state: product })}>
+               <img className="card-img-top" id='cart-image'src={product.image}/>
+                <h5 id='cart-image-title'>{product.title}</h5>
                 <h6> ${product.price}</h6>
                 </div>
                 ))
 }
-                <p> Order Summary</p>
-                <p>Subtotal</p>
-                $ {cart.total}
+                <div id='summary-div'>
+        <h3 id='subtotal'>Subtotal: $ {cart.total}</h3> <StripeCheckout id='checkout'
+       name="The Wander Shop"
+       image={CompanyLogo}
+       billingAddress
+       shippingAddress
+       description={`Your total is $ ${cart.total}`}
+       amount={cart.total*100}
+       token={onToken}
+       stripeKey={KEY}>
+       <button id='pay-btn'className="btn btn-primary">Pay</button>
+      </StripeCheckout> 
+
+                </div>
         </div>
+        </div>
+
     );
 }
 

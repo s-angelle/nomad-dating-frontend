@@ -1,11 +1,49 @@
+
 .App {
     display:flex;
     flex-direction: column;
     justify-content:space-between;
-    height: 100vh;
+    font-family: "Permanent Marker", cursive;
+    height:auto;
+    
 }
 
-img{
-    height: 100px;
-    width: 100px;
+/* LINKS */
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+#navbar li a,
+#footer a {
+  position: relative;
+  text-decoration: none;
+  color: #e6dcc5;
+}
+
+#navbar li a:hover,
+#footer a:hover {
+  color: #e6dcc5;
+}
+
+#navbar li a::before,
+#footer a:before {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 1%;
+  left: 0;
+  content: "";
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  background-color: #e6dcc5;
+}
+
+#navbar li a:hover::before,
+#footer a:hover::before {
+  transform: scaleX(1);
 }

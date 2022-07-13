@@ -2,20 +2,12 @@ import { Link } from "react-router-dom";
 import { Badge } from "@material-ui/core";
 import { ShoppingCartOutlined } from "@material-ui/icons";
 import { useSelector } from "react-redux";
-import Products from "../../pages/Products/Products";
+import "./Nav.css";
+import CompanyLogo from '../../images/Wander-Shop-Co.png'
 
 
 
 const Nav = ({ user, setUser, logOut }) => {
-  // [filteredItems, setFilteredItems] = useState()
-  // // console.log('user', user)
-
-  // useEffect(() => {
-  //   effect
-  //   return () => {
-  //     cleanup
-  //   };
-  // }, [products]);
 
   const handleLogOut = () => {
     setUser(null);
@@ -27,13 +19,14 @@ const Nav = ({ user, setUser, logOut }) => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-light">
-        <div className="container-fluid d-flex justify-content-between">
+      <nav className="navbar custom navbar-expand-lg p-3" id='navbar'>
+        <div className="container-fluid d-flex justify-content-center">
           <Link className="navbar-brand col" to="/">
-            LOGO
+            <img id="company-logo" src={CompanyLogo} />
           </Link>
           <button
             className="navbar-toggler"
+            id='navbar-toggler'
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -41,12 +34,12 @@ const Nav = ({ user, setUser, logOut }) => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon" id='navbar-toggler'></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             {user ? (
               <>
-                <form className="d-flex" role="search">
+                {/* <form className="d-flex" role="search">
                   <input
                     className="form-control me-2"
                     type="search"
@@ -56,22 +49,22 @@ const Nav = ({ user, setUser, logOut }) => {
                   <button className="btn btn-outline-success" type="submit">
                     Search
                   </button>
-                </form>
-                <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li className="nav-item">
+                </form> */}
+                <ul className="navbar-nav ms-auto mb-0 mb-lg-0">
+                  <li className="nav-item mt-2">
                     <Link to='/cart/:id'>
                   <Badge badgeContent={quantity} color="primary">
-                    <ShoppingCartOutlined />
+                    <ShoppingCartOutlined id='shopping-cart' fontSize="inherit" color="white"  />
                   </Badge>
                   </Link>
                   </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/products">
+                  <li className="nav-item mt-1">
+                    <Link className="nav-link text-white" id='nav-item' to="/products">
                      Products
                     </Link>
                   </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" onClick={handleLogOut} to="/">
+                  <li className="nav-item mt-1">
+                    <Link className="nav-link text-white" onClick={handleLogOut} to="/">
                       Logout
                     </Link>
                   </li>
@@ -79,13 +72,16 @@ const Nav = ({ user, setUser, logOut }) => {
               </>
             ) : (
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <Link className="nav-link" to="/signup">
+                <li className="nav-item mt-2">
+                  About Us
+                </li>
+                <li className="nav-item mt-2">
+                  <Link className="nav-link text-white" to="/signup">
                     Sign Up
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/login">
+                <li className="nav-item mt-2">
+                  <Link className="nav-link text-white" to="/login">
                     Login
                   </Link>
                 </li>

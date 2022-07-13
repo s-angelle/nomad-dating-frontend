@@ -29,12 +29,6 @@ useEffect(() => {
   return (
     <div>
       <StripeCheckout
-       name="The Wander Shop"
-       image=""
-       billingAddress
-       shippingAddress
-       description="Your total is $20"
-       amount={2000}
        token={onToken}
        stripeKey={KEY}>
         <button>Pay Now</button>

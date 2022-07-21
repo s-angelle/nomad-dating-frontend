@@ -4,10 +4,9 @@ import { useNavigate } from "react-router-dom";
 import "./CreateProduct.css";
 
 const CreateProduct = () => {
-  // If you don't specifically define object properties in your state, if you set your state anywhere in your code, it will automatically create the state object property for you.
   const [productDetails, setProductDetails] = useState({
     image: "",
-    title:"",
+    title: "",
     price: 0,
     description: "",
     inStock: "",
@@ -28,7 +27,6 @@ const CreateProduct = () => {
     navigate("/products");
   };
 
-  // console.log(productDetails)
   return (
     <form className="row g-3" id="update-product-form" onSubmit={handleSubmit}>
       <div className="col-md-6">
@@ -43,32 +41,35 @@ const CreateProduct = () => {
           onChange={handleChange}
           value={productDetails.title}
         />
-      <div id='price-div'className="col-md-3">
-        <label htmlFor="inputGenre4" className="form-label">
-          Price:
-        </label>
-        <input
-          type="number"
-          className="form-control"
-          id="inputGenre4"
-          name="year"
-          onChange={handleChange}
-          value={productDetails.price}
-        />
+        <div id="price-div" className="col-md-3">
+          <label htmlFor="inputGenre4" className="form-label">
+            Price:
+          </label>
+          <input
+            type="number"
+            className="form-control"
+            id="inputGenre4"
+            name="year"
+            onChange={handleChange}
+            value={productDetails.price}
+          />
+        </div>
       </div>
-      </div>
-      <div id ='description-div'className="col-12">
+      <div id="description-div" className="col-12">
         <label htmlFor="inputPlot" className="form-label">
-         Description:
+          Description:
         </label>
-        <textarea rows='5' cols='60' id='description' name='description'
+        <textarea
+          rows="5"
+          cols="60"
+          id="description"
+          name="description"
           type="text"
           className="form-control"
           placeholder="Product description..."
           onChange={handleChange}
           value={productDetails.description}
-        >
-        </textarea>
+        ></textarea>
       </div>
 
       <div className="col-md-6">
@@ -85,9 +86,8 @@ const CreateProduct = () => {
         />
       </div>
 
-
       <div className="col-12">
-        <button type="submit" className="btn btn-primary" >
+        <button type="submit" className="btn btn-primary">
           Create Product
         </button>
       </div>

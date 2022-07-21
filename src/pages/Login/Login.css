@@ -1,8 +1,8 @@
 #login-form {
-    height: 78vh;
-    margin-top: 25%;
+  margin-top: 25%;
+  height: 78vh;
 }
 
 #login-form input {
-    background-color: rgb(223, 214, 195);
+  background-color: rgb(223, 214, 195);
 }

@@ -1,39 +1,32 @@
-
-#sign-up{
-    /* background-color:#012D80 ; */
-    background: url('https://mythsandmountains.com/wp-content/uploads/2018/09/myths-and-mountains-intro-slide3-1.jpg');
+#sign-up {
+  background: url("https://mythsandmountains.com/wp-content/uploads/2018/09/myths-and-mountains-intro-slide3-1.jpg");
 }
 
 #sign-up-photo {
-    /* height:40rem;
-    width:45rem; */
-    height:100%;
-    width:100%;
-    object-fit: cover;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
-} 
-
-#signup-card{
-    background-color: antiquewhite;
+#signup-card {
+  background-color: antiquewhite;
 }
 
 .card-body input,
-.card-body input:visited{
-    /* background-color: rgb(225, 214, 198);  */
-    background-color: rgb(231, 221, 205); 
+.card-body input:visited {
+  background-color: rgb(231, 221, 205);
 }
 
 .btn.btn-primary {
-    margin-left:44%;
-    color:white;
+  margin-left: 44%;
+  color: white;
 }
 
 .btn.btn-primary:active {
-box-shadow: 0 0.5em;
-transform: translateY(4px);
+  box-shadow: 0 0.5em;
+  transform: translateY(4px);
 }
 
 #container {
-    border-radius: 4%;
+  border-radius: 4%;
 }
-

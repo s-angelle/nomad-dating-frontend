@@ -1,11 +1,9 @@
-
 .App {
-    display:flex;
-    flex-direction: column;
-    justify-content:space-between;
-    font-family: "Permanent Marker", cursive;
-    height:auto;
-    
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Permanent Marker", cursive;
+  height: auto;
 }
 
 /* LINKS */

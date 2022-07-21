@@ -31,7 +31,6 @@ const SignUp = ({ setUser }) => {
     e.preventDefault();
     try {
       const user = await signUp(newUser);
-      // console.log(user)
       setUser(user);
       if (user) navigate("/products");
     } catch (e) {
@@ -40,7 +39,7 @@ const SignUp = ({ setUser }) => {
   };
 
   return (
-    <section id='sign-up' className="h-90">
+    <section id="sign-up" className="h-90">
       <div className="container py-4 h-50">
         <div className="row d-flex justify-content-center align-items-center h-50">
           <div className="col h-40">
@@ -50,13 +49,15 @@ const SignUp = ({ setUser }) => {
                   <img
                     id="sign-up-photo"
                     src={SignUpPhoto}
-                    alt="Sample photo"
+                    alt="group of friends in van"
                     className="img-fluid"
                   />
                 </div>
                 <form className="col-xl-6" onSubmit={handleSubmit}>
-                  <div  id='signup-card'className="card-body p-md-3 text-black">
-                    <h3 className="mb-5 mt-2 text-uppercase text-center">Join Us</h3>
+                  <div id="signup-card" className="card-body p-md-3 text-black">
+                    <h3 className="mb-5 mt-2 text-uppercase text-center">
+                      Join Us
+                    </h3>
 
                     <div className="row">
                       <div className="col-md-6 mb-4">
@@ -150,7 +151,7 @@ const SignUp = ({ setUser }) => {
                             className="form-label"
                             htmlFor="form3Example1n1"
                           >
-                           Profile Photo:
+                            Profile Photo:
                           </label>
                         </div>
                       </div>
@@ -210,11 +211,10 @@ const SignUp = ({ setUser }) => {
                         />
                       </label>
                     </div>
-                  <button className="btn btn-primary mb-4" type="submit">
-                    Submit
-                  </button>
+                    <button className="btn btn-primary mb-4" type="submit">
+                      Submit
+                    </button>
                   </div>
-
                 </form>
               </div>
             </div>

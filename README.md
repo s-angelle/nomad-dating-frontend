@@ -17,12 +17,13 @@ https://github.com/s-angelle/the-wander-shop-app.git
 | 07/10/2022 | updated components / pages / redux / and stripe library | None     | enhance CSS              |
 | 07/11/2022 | added components and pages                              | None     | enhance CSS              |
 | 07/13/2022 | updated css for components / pages                      | None     | organize / format code   |
+| 07/21/2022 | organized / formatted code in src folder                | None     | stretch goals            |
 
 ## Stretch Goals / Areas of Improvement
 
 ---
 
-- Enhance CSS (make cart page responsive)
+- Enhance CSS (make various pages more responsive)
 - Remove items from cart after user transaction
 - Successfully connect to backend's third-party API
 - Enable user to update cart from cart page

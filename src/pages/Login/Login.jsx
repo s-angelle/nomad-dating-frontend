@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../utilities/users-service";
-import './Login.css';
+import "./Login.css";
 
 const Login = ({ setUser }) => {
   const [message, setMessage] = useState(
@@ -27,7 +27,7 @@ const Login = ({ setUser }) => {
       if (user) {
         setUser(user);
         // Redirect to profiles page after successful login
-        navigate('/products');
+        navigate("/products");
       } else {
         throw new Error();
       }
@@ -37,7 +37,11 @@ const Login = ({ setUser }) => {
   };
 
   return (
-    <form className="mx-auto w-50 border p-5 mt-5" id='login-form'onSubmit={handleSubmit}>
+    <form
+      className="mx-auto w-50 border p-5 mt-5"
+      id="login-form"
+      onSubmit={handleSubmit}
+    >
       <h2> Are You Ready ?</h2>
       <div className="mb-3">
         <label htmlFor="exampleInputEmail1" className="form-label">

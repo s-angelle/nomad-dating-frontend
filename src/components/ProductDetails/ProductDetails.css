@@ -1,46 +1,45 @@
-
 #details-div {
-    margin-bottom: 10rem;
-    margin-left:14rem;
-    margin-right: 14rem;
-    text-align:center;
+  margin-bottom: 10rem;
+  margin-left: 14rem;
+  margin-right: 14rem;
+  text-align: center;
 }
 
 #product-details-img {
-    height: 55%;
-    width: 55%;
     margin-top: 4rem;
     border-radius: 3%;
-    box-shadow: .1em .1em .5em .2em;
+  height: 55%;
+  width: 55%;
+  box-shadow: 0.1em 0.1em 0.5em 0.2em;
 }
 
 #product-title {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 #price {
-    margin-bottom:1rem; 
-    font-weight: bold;
+  margin-bottom: 1rem;
+  font-weight: bold;
 }
 
 .btn.btn {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 #product-description,
 #product-title,
 #price {
-    color:black;
-    line-height: 1.4;
+  color: black;
+  line-height: 1.4;
 }
 
 #product-description {
-    margin-left:25%;
-    margin-right:25%;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 .btn.btn-primary {
-    background-color: #012D80;
-    color: #e6dcc5;
-    padding: .4rem;
+  padding: 0.4rem;
+  background-color: #012d80;
+  color: #e6dcc5;
 }

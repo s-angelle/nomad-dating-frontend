@@ -3,30 +3,26 @@ import { Badge } from "@material-ui/core";
 import { ShoppingCartOutlined } from "@material-ui/icons";
 import { useSelector } from "react-redux";
 import "./Nav.css";
-import CompanyLogo from '../../images/Wander-Shop-Co.png'
-
-
+import CompanyLogo from "../../images/Wander-Shop-Co.png";
 
 const Nav = ({ user, setUser, logOut }) => {
-
   const handleLogOut = () => {
     setUser(null);
     logOut();
   };
 
-  const quantity = useSelector(state => state.cart.quantity)
-
+  const quantity = useSelector((state) => state.cart.quantity);
 
   return (
     <div>
-      <nav className="navbar custom navbar-expand-lg p-3" id='navbar'>
+      <nav className="navbar custom navbar-expand-lg p-3" id="navbar">
         <div className="container-fluid d-flex justify-content-center">
           <Link className="navbar-brand col" to="/">
-            <img id="company-logo" src={CompanyLogo} />
+            <img id="company-logo" src={CompanyLogo} alt='Company Logo' />
           </Link>
           <button
             className="navbar-toggler"
-            id='navbar-toggler'
+            id="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -34,37 +30,39 @@ const Nav = ({ user, setUser, logOut }) => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon" id='navbar-toggler'></span>
+            <span className="navbar-toggler-icon" id="navbar-toggler"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             {user ? (
               <>
-                {/* <form className="d-flex" role="search">
-                  <input
-                    className="form-control me-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                  />
-                  <button className="btn btn-outline-success" type="submit">
-                    Search
-                  </button>
-                </form> */}
+
                 <ul className="navbar-nav ms-auto mb-0 mb-lg-0">
                   <li className="nav-item mt-2">
-                    <Link to='/cart/:id'>
-                  <Badge badgeContent={quantity} color="primary">
-                    <ShoppingCartOutlined id='shopping-cart' fontSize="inherit" color="white"  />
-                  </Badge>
-                  </Link>
-                  </li>
-                  <li className="nav-item mt-1">
-                    <Link className="nav-link text-white" id='nav-item' to="/products">
-                     Products
+                    <Link to="/cart/:id">
+                      <Badge badgeContent={quantity} color="primary">
+                        <ShoppingCartOutlined
+                          id="shopping-cart"
+                          fontSize="inherit"
+                          color="white"
+                        />
+                      </Badge>
                     </Link>
                   </li>
                   <li className="nav-item mt-1">
-                    <Link className="nav-link text-white" onClick={handleLogOut} to="/">
+                    <Link
+                      className="nav-link text-white"
+                      id="nav-item"
+                      to="/products"
+                    >
+                      Adventures
+                    </Link>
+                  </li>
+                  <li className="nav-item mt-1">
+                    <Link
+                      className="nav-link text-white"
+                      onClick={handleLogOut}
+                      to="/"
+                    >
                       Logout
                     </Link>
                   </li>
@@ -72,9 +70,7 @@ const Nav = ({ user, setUser, logOut }) => {
               </>
             ) : (
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li className="nav-item mt-2">
-                  About Us
-                </li>
+                <li className="nav-item mt-2">About Us</li>
                 <li className="nav-item mt-2">
                   <Link className="nav-link text-white" to="/signup">
                     Sign Up

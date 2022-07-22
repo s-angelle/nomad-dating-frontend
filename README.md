@@ -6,6 +6,12 @@ This project is the full stack application version of my previous CRUD project:
 
 https://github.com/s-angelle/the-wander-shop-app.git
 
+## How to Access This Project
+
+This project (backend) has been successfully deployed here:
+
+https://the-wander-shop-frontend-v2.vercel.app/
+
 ## Development Process
 
 | DATE       | PROGRESS                                                | BLOCKERS | GOALS                    |

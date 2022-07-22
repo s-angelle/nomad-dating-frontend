@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getToken } from "./users-service";
 
-const BASE_URL = "http://localhost:8080/api/v1/products";
+const BASE_URL = "https://the-wander-shop-v2.onrender.com/api/v1/products";
 
 const setOptions = () => {
   return {

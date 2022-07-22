@@ -9,7 +9,7 @@ const CreateProduct = () => {
     title: "",
     price: 0,
     description: "",
-    inStock: "",
+    inStock: true,
   });
 
   const navigate = useNavigate();
@@ -49,7 +49,7 @@ const CreateProduct = () => {
             type="number"
             className="form-control"
             id="inputGenre4"
-            name="year"
+            name="price"
             onChange={handleChange}
             value={productDetails.price}
           />

@@ -8,7 +8,7 @@ https://github.com/s-angelle/the-wander-shop-app.git
 
 ## How to Access This Project
 
-This project (backend) has been successfully deployed here:
+This project (frontend) has been successfully deployed here:
 
 https://the-wander-shop-frontend-v2.vercel.app/
 

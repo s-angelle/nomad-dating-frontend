@@ -32,7 +32,7 @@ const SignUp = ({ setUser }) => {
     try {
       const user = await signUp(newUser);
       setUser(user);
-      if (user) navigate("/products");
+      if (user) navigate("/login");
     } catch (e) {
       console.log(e);
     }

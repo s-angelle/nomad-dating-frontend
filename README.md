@@ -10,7 +10,7 @@ https://github.com/s-angelle/the-wander-shop-app.git
 
 This project has been successfully deployed here:
 
-https://the-wander-shop-frontend-v2-git-main-s-angelle.vercel.app/
+https://the-wander-shop-v2.vercel.app/
 
 ( There is a slight lag after signing up / logging in, possibly due to the deployment service implemented. )
 

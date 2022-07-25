@@ -157,6 +157,9 @@ const SignUp = ({ setUser }) => {
                       </div>
                     </div>
 
+                    <label className="form-label" htmlFor="form3Example8">
+                      Email:
+                    </label>
                     <div className="form-outline mb-4">
                       <input
                         type="email"
@@ -166,10 +169,10 @@ const SignUp = ({ setUser }) => {
                         onChange={handleChange}
                         required
                       />
-                      <label className="form-label" htmlFor="form3Example8">
-                        Email:
-                      </label>
 
+                      <label className="form-label" htmlFor="form3Example9">
+                        Password:
+                      </label>
                       <input
                         type="password"
                         className="form-control form-control-lg"
@@ -178,10 +181,10 @@ const SignUp = ({ setUser }) => {
                         onChange={handleChange}
                         required
                       />
-                      <label className="form-label" htmlFor="form3Example9">
-                        Password:
-                      </label>
 
+                      <label className="form-label" htmlFor="form3Example9">
+                        Re-type Password:
+                      </label>
                       <input
                         type="password"
                         className="form-control form-control-lg"
@@ -190,10 +193,10 @@ const SignUp = ({ setUser }) => {
                         onChange={handleChange}
                         required
                       />
-                      <label className="form-label" htmlFor="form3Example9">
-                        Re-type Password:
-                      </label>
 
+                      <label className="form-label" htmlFor="form3Example9">
+                        A few of your interests:
+                      </label>
                       <input
                         type="text"
                         className="form-control form-control-lg"
@@ -202,14 +205,6 @@ const SignUp = ({ setUser }) => {
                         onChange={handleChange}
                         required
                       />
-                      <label className="form-label" htmlFor="form3Example9">
-                        A few of your interests:
-                        <input
-                          type="about"
-                          className="form-control form-control-lg"
-                          required
-                        />
-                      </label>
                     </div>
                     <button className="btn btn-primary mb-4" type="submit">
                       Submit

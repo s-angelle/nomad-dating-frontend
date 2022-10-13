@@ -14,6 +14,8 @@ https://the-wander-shop-v2.vercel.app/
 
 ( There is a slight lag after signing up / logging in, possibly due to the deployment service implemented. )
 
+The backend of this project is located here: https://github.com/s-angelle/the-wander-shop-backend-v2
+
 ## Development Process
 
 | DATE       | PROGRESS                                                | BLOCKERS | GOALS                    |
